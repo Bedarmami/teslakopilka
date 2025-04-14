@@ -58,9 +58,7 @@ async def stats_handler(message: types.Message):
         total = await get_balance(conn, message.from_user.id)
         weekly_gain = total
         monthly_gain = total
-        await message.reply(f"Статистика:
-За неделю: +{weekly_gain} зл
-За месяц: +{monthly_gain} зл")
+        await message.reply(f"Статистика:\\nЗа неделю: +{weekly_gain} зл\\nЗа месяц: +{monthly_gain} зл")
 
 if __name__ == "__main__":
     import asyncio
