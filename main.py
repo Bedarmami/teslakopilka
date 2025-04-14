@@ -52,8 +52,7 @@ async def start_handler(message: types.Message):
 async def handle_balance(message: types.Message):
     async with db_pool.acquire() as conn:
         total = await get_balance(conn, message.from_user.id)
-        await message.reply(f"💰 Баланс: {total} зл.
-Цель: {TARGET_AMOUNT} зл.")
+        await message.reply(f"💰 Баланс: {total} зл. Цель: {TARGET_AMOUNT} зл.")
 
 @dp.message_handler(lambda message: message.text == "Сбросить прогресс")
 async def handle_reset(message: types.Message):
